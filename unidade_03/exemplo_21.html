@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo_21</title>
+</head>
+<body>
+    <script>
+        let carros = ["Honda", "Fiat", "Hundai"];
+        carros[2] = "Hyundai"; //Substitui o valor do elemnto na posição 2
+        let c = prompt("Digite um fabricante: ");
+        carros.push(c); // Adiciona um novo elemento ao final do vetor
+
+        // A propriedade length retorna o tamanho do vetor
+        for(let i = 0; i < carros.length; i++){
+            alert(carros[i]);
+        }
+    </script>
+</body>
+</html>
