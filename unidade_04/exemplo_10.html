@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+</head>
+<body>
+    <h2>Repositórios do GitHub</h2>
+    <p>Utilizando o Fetch para listar os repositórios do GitHub</p>
+    <ul></ul>
+
+    <script>
+        const url = "https://api.github.com/users/DevLeonir/repos";
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(element => {
+                    $("ul").append("<li>" + element.name + "</li>");
+                });
+            })
+            .catch(err => console.log(err));
+    </script>
+</body>
+</html>
