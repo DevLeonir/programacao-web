@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com React.js</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        .hello {
+            color: #c05959;
+            font-size: 1.5em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        class Carro extends React.Component{
+            constructor(props){
+                super(props);
+                this.state ={
+                    marca: "Ford",
+                    modelo: "Camaro",
+                    cor: "amarelo",
+                    ano: 1975
+                };
+            }
+            render(){
+                return(
+                    <div>
+                        <h1> Meu carro JSX </h1>
+                        <ul>
+                            <li>Marca: {this.state.marca}</li>
+                            <li>Modelo: {this.state.modelo}</li>
+                            <li>Cor: {this.state.cor}</li>
+                            <li>Ano: {this.state.ano}</li>
+
+                        </ul>
+                    </div>
+                );
+            }
+        }
+        
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Carro/>);
+    </script>
+</body>
+</html>
